@@ -1,0 +1,25 @@
+scan-image
+cd
+code Scan.java
+
+code MANIFEST.MF
+	Manifest-Version: 1.0
+	Main-Class: com.example.Scan
+javac -d ./bin src/com/example/Scan.java
+jar cfm scan-image.jar MANIFEST.MF -C bin .
+java -jar scan-image.jar
+
+docker build -t scan-image . 
+docker run -it scan-image
+
+docker tag scan-image systemcallbeam/scan-image:v1.0
+docker push systemcallbeam/scan-image:v1.0
+
+exec -it [name] java [.class]
+
+
+
+
+
+
+
